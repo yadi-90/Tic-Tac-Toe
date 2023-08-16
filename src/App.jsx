@@ -37,8 +37,9 @@ function App() {
     }
   };
   useEffect(() => {
-    checkScores(); // Corrected function name
+    checkScores(); 
   }, [cells]);
+  
   
   return (
     <div className="App">
