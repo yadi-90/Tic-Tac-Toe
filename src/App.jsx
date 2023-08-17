@@ -5,12 +5,20 @@ import Cell from './components/Cell';
 import { useState,useEffect } from 'react';
 
 function App() {
+    // State to manage the current state of the cells in the game.
   const[cells, setCells]= useState(["","","","","","","","","",])
+
+
+    // State to manage the current state of the cells in the game.
   const[go,setGo] = useState("circle")
+
+   // State to hold the winning message.
   const[winningMessage, setWinningMessage] = useState(null)
 
-  const message = "it is now "+ go + " 's go. "
+   // Message indicating whose turn it is.
+  const message = "It is now "+ go + " 's turn. "
 
+    // Function to check if there's a winning combination.
   const checkScores = () => {
     const winningCombos = [
       [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -21,6 +29,7 @@ function App() {
     let circleWins = false;
     let crossWins = false;
   
+        // Loop through each winning combination to check for a win.
     winningCombos.forEach(array => {
       if (array.every(cell => cells[cell] === "circle")) {
         circleWins = true;
@@ -30,12 +39,17 @@ function App() {
       }
     });
   
+
+        // Update the winning message based on the outcome.
     if (circleWins) {
       setWinningMessage("Circle Wins!");
     } else if (crossWins) {
       setWinningMessage("Cross Wins!");
     }
   };
+
+
+    // UseEffect hook to check for wins whenever cells are updated.
   useEffect(() => {
     checkScores(); 
   }, [cells]);
