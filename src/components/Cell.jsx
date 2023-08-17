@@ -2,16 +2,21 @@ import React from 'react'
 
 function Cell({ id, cell, setCells, go, setGo, cells, winningMessage }) {
 
+  // Event handler for when a cell is clicked.
   const handleClick=(e)=> {
+     // Check if the cell is already taken by a circle or cross.
     const taken = e.target.firstChild.classList.contains("circle")||
     e.target.firstChild.classList.contains("cross")
 
+     // Only perform actions if the cell is not taken.
     if(!taken) {
      if (go === "circle"){
       e.target.firstChild.classList.add("circle")
       handleCellChange("circle")
       setGo("cross")
      }
+
+     // Check whose turn it is and apply appropriate class.
       if (go === "cross"){
         e.target.firstChild.classList.add("cross")
         handleCellChange("cross")
