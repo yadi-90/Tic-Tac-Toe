@@ -74,8 +74,8 @@ function App() {
         winningMessage={winningMessage}
         />)}
       </div> 
-        <p>{winningMessage || message}</p>
-         <h2>Instructions</h2>
+        <p className="Message">{winningMessage || message}</p>
+         <h2 className="TitleInstructions">Instructions</h2>
          <ListInstructions />
 
     </div>

@@ -76,3 +76,15 @@
     margin-left: 15%;
     margin-bottom: 10%;
   }
+  .Instructions{
+    margin-left: 15%;
+  }
+  .TitleInstructions{
+text-align: center;
+margin-top: 10%;
+  }
+  .Message{
+    color:blue;
+    font-size: 2.5rem;
+  text-align: center;
+  }
